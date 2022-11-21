@@ -1,7 +1,9 @@
 package com.skypro.homework_spring_boot.service;
 
+import com.skypro.homework_spring_boot.exception.InvalidEmployeeRequestExeption;
 import com.skypro.homework_spring_boot.model.Employee;
 import com.skypro.homework_spring_boot.record.EmployeeRequest;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -17,10 +19,14 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {
-        if (employeeRequest.getFirstName() == null || employeeRequest.getLastName() == null) {
-            throw new IllegalArgumentException("Employee name should be set");
+
+        if (!StringUtils.isAlpha(employeeRequest.getFirstName()) ||
+                !StringUtils.isAlpha(employeeRequest.getLastName())) {
+            throw new InvalidEmployeeRequestExeption();
         }
-        Employee employee = new Employee(employeeRequest.getFirstName(), employeeRequest.getLastName(),
+        Employee employee = new Employee(
+                StringUtils.capitalize(employeeRequest.getFirstName()),
+                StringUtils.capitalize(employeeRequest.getLastName()),
                 employeeRequest.getDepartment(), employeeRequest.getSalary());
         this.employees.put(employee.getId(), employee);
         return employee;

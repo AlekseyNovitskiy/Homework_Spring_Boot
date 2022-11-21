@@ -5,8 +5,8 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Иванов",
-  "lastName": "Иван",
+  "firstName": "Ivanov",
+  "lastName": "Ivan",
   "department": 1,
   "salary": 35000
 }
@@ -15,8 +15,8 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Петров",
-  "lastName": "Петр",
+  "firstName": "petrov",
+  "lastName": "petr",
   "department": 2,
   "salary": 47000
 }
@@ -25,81 +25,12 @@ POST http://localhost:8080/employees
 Content-Type: application/json
 
 {
-  "firstName": "Баженов",
-  "lastName": "Валентин",
+  "firstName": "Petrov1",
+  "lastName": "Petr1",
   "department": 3,
   "salary": 52000
 }
-###Добавление сотрудника 4
-POST http://localhost:8080/employees
-Content-Type: application/json
 
-{
-  "firstName": "Бодров",
-  "lastName": "Михаил",
-  "department": 4,
-  "salary": 49000
-}
-###Добавление сотрудника 5
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Белкин",
-  "lastName": "Вадим",
-  "department": 5,
-  "salary": 38000
-}
-###Добавление сотрудника 6
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Мальцев",
-  "lastName": "Сергей",
-  "department": 1,
-  "salary": 33000
-}
-###Добавление сотрудника 7
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Шахов",
-  "lastName": "Петр",
-  "department": 2,
-  "salary": 44000
-}
-###Добавление сотрудника 8
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Ворошилов",
-  "lastName": "Максим",
-  "department": 3,
-  "salary": 102000
-}
-###Добавление сотрудника 9
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Слезко",
-  "lastName": "Юрий",
-  "department": 4,
-  "salary": 89000
-}
-###Добавление сотрудника 10
-POST http://localhost:8080/employees
-Content-Type: application/json
-
-{
-  "firstName": "Сидоренко",
-  "lastName": "Александр",
-  "department": 5,
-  "salary": 138000
-}
 ### Получение суммы зарплат сотрудников
 GET http://localhost:8080/employees/salary/sum
 
